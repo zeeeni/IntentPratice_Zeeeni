@@ -14,15 +14,30 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-//        CALL 액션 예제
+//
+        smsBtn.setOnClickListener {
 
-        val inputPhoneNum = phoneNumEdt.text.toString()
+            val inputPhoneNum = phoneNumEdt.text.toString()
 
-        val myUri = Uri.parse("tel:${inputPhoneNum}")
+            val myUri = Uri.parse("smsto:${inputPhoneNum}")
 
-        val  myIntent = Intent(Intent.ACTION_CALL, myUri)
+            val  myIntent = Intent(Intent.ACTION_SENDTO, myUri)
 
-        startActivity(myIntent)
+            myIntent.putExtra("sms_body", "미리 내용 입력")
+
+            startActivity(myIntent)
+
+        }
+
+////        CALL 액션 예제
+//
+//        val inputPhoneNum = phoneNumEdt.text.toString()
+//
+//        val myUri = Uri.parse("tel:${inputPhoneNum}")
+//
+//        val  myIntent = Intent(Intent.ACTION_CALL, myUri)
+//
+//        startActivity(myIntent)
 
 //        DIAL 액션 예제
 
