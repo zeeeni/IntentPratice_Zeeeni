@@ -16,6 +16,7 @@ class EditNicknameActivity : AppCompatActivity() {
             val inputNewNickname = newNicknameEdt.text.toString()
 
 //            입력한 닉네임을 가지고 메인으로 복귀
+
 //            입력한 닉네임을 담아주기 위한 용도로만 사용하는 Intent, 비워두는이유는 이미 왕복티켓끊고들어옴
             val resultIntent = Intent()
             resultIntent.putExtra("nickname", inputNewNickname)
